@@ -1,9 +1,22 @@
 ﻿@page "/"
 
-<PageTitle>Index</PageTitle>
+<PageTitle>URLdeQRCode</PageTitle>
 
-<h1>Hello, world!</h1>
+<Divider Orientation="left" Style="font-weight:bold">このサイトについて</Divider>
+    <p>
+        このサイトはURLでQRコードの内容を指定できます。また、ダウンロードの処理やURLへのリダイレクト処理が可能です。
+    </p>
+<Input Placeholder="QRコードの内容を入力" @bind-Value="@QrCodeContent" />
+<Button OnClick="@(() => CreateQRCode(QrCodeContent))">QRコード生成</Button>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    private string QrCodeContent = "";
+
+
+    private void CreateQRCode(string qrCodeContent)
+    {
+
+    }
+
+}

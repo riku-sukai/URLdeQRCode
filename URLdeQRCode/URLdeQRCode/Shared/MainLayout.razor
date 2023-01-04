@@ -1,17 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<Layout Class="layout">
+    <Header>
+        <GridRow>
+            <GridCol Span="6">
+                <div style="color:white;">
+                    URLdeQRCode
+                </div>
+            </GridCol>
+            <GridCol Span="18">
+                <div>
+                    <Menu Theme="MenuTheme.Dark" Mode="MenuMode.Horizontal" DefaultSelectedKeys=@(new[]{"1"})>
+            <MenuItem Key="1">QRコード</MenuItem>
+            <MenuItem Key="2">お問い合わせ</MenuItem>
+        </Menu>
         </div>
+           </GridCol>
+        </GridRow>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+
+    </Header>
+    <Content Style="padding: 0 50px;">
+        <div class="site-layout-content">@Body</div>
+    </Content>
+    <Footer Style="text-align: center; ">sukai-riku ©2023</Footer>
+</Layout>
